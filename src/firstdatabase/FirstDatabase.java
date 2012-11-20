@@ -21,15 +21,15 @@ public class FirstDatabase {
         // STEP 1: Set the fully qualified name of the JDBC driver class
         // (Here we use the Microsoft driver .jar provided on Blackboard
         // Did you remember to import java.sql.* ?
-        db.driverClassName = "com.mysql.jdbc.jdbc2.optional.MysqlDataSource";
+        db.driverClassName = "com.mysql.jdbc.Driver";
 
         // STEP 2: Set the driver-specific URL (Uniform Resource Locator)
         // This is a server-specific address format
-        db.url = "jdbc:mysql://localhost:3306/";
+        db.url = "jdbc:mysql://localhost:3306/contact";
 
         // STEP 3: Set user name and password (if required)
-        db.userName = "advjava";
-        db.password = "advjava";
+        db.userName = "root";
+        db.password = "admin";
 
         // STEP 4: Now make a connection to the database
         // Checked exceptions demand try-catch
@@ -66,9 +66,8 @@ public class FirstDatabase {
         // some database products use proprietary code, like this one for MS-Access)
 //		String sql = "SELECT * FROM [dbo].[EMPLOYEE] WHERE "
 //                        + "HIREDATE > '1/1/1988' ORDER BY LASTNAME";
-        String sql = "SELECT LASTNAME, FIRSTNAME, EMAIL, HIREDATE FROM [dbo].[EMPLOYEE] "
-                + "ORDER BY EMAIL DESC";
-        String sql2 = "DELETE FROM [dbo].[EMPLOYEE] WHERE LASTNAME='Berger' AND FIRSTNAME = 'Ham'";
+        String sql = "select * from contact";
+
 
         try {
             // Next use the connection object created earlier to create a statement object
@@ -84,7 +83,7 @@ public class FirstDatabase {
 
 
             System.out.println("============================");
-            System.out.println("Output from SQL Server...");
+            System.out.println("Output from MySQL Server...");
             System.out.println("============================");
 
 //                        rs.next();
