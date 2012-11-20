@@ -66,7 +66,7 @@ public class FirstDatabase {
         // some database products use proprietary code, like this one for MS-Access)
 //		String sql = "SELECT * FROM [dbo].[EMPLOYEE] WHERE "
 //                        + "HIREDATE > '1/1/1988' ORDER BY LASTNAME";
-        String sql = "select * from contact";
+        String sql = "select * from person";
 
 
         try {
@@ -96,11 +96,11 @@ public class FirstDatabase {
                 // Each record contains three display fields which we will reference
                 // by number (1 based). Read up on other methods we could use in ResultSet.
                 System.out.println("\nRecord No: " + (count + 1));
-//                                System.out.println("\nID: " + rs.getInt(1)); // column one (ResultSet field)
-                System.out.println("Last Name: " + rs.getString(1)); // named field
-                System.out.println("First Name: " + rs.getObject("FIRSTNAME"));
-                System.out.println("Email: " + rs.getObject("EMAIL"));
-                System.out.println("Hire Date: " + rs.getObject("HIREDATE"));
+                System.out.println("\nID: " + rs.getInt(1)); // column one (ResultSet field)
+                System.out.println("Last Name: " + rs.getString("last_name")); // named field
+                System.out.println("First Name: " + rs.getObject("first_name"));
+                //System.out.println("Email: " + rs.getObject("EMAIL"));
+                System.out.println("Birthday: " + rs.getObject("birthday"));
                 count++;
             }
             System.out.println("==================\n" + count + " records found.");
